@@ -1,5 +1,5 @@
 import { app } from 'electron';
-import { install, getInstalledBrowsers, Browser, detectBrowserPlatform, InstallOptions } from '@puppeteer/browsers';
+import { install, getInstalledBrowsers, Browser, detectBrowserPlatform, InstallOptions, resolveBuildId } from '@puppeteer/browsers';
 import path from 'path';
 import fs from 'fs/promises';
 import { BrowserInstallOptions, BrowserInstallResult } from './types';
@@ -78,7 +78,7 @@ export async function installBrowser(options: BrowserInstallOptions = {}): Promi
 
   const installOptions: InstallOptions = {
     browser: resolvedBrowser,
-    buildId: buildId || 'latest',
+    buildId: buildId || await resolveBuildId(resolvedBrowser, platform, 'latest'),
     cacheDir,
     platform,
   };
