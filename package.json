@@ -1,5 +1,5 @@
 {
-  "name": "electron-puppeteer",
+  "name": "electron-puppeteer-browsers",
   "version": "1.0.0",
   "description": "Easily install and manage Puppeteer browsers in your Electron app",
   "main": "dist/index.js",

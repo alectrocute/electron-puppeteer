@@ -1,4 +1,4 @@
-# electron-puppeteer
+# electron-puppeteer-browsers
 
 Easily install and manage Puppeteer browsers in your Electron app. This package provides a simple API to download and install browsers using `@puppeteer/browsers` and stores them in your Electron app's user data directory. This avoids the need to bundle, codesign and notarize the browsers in your Electron application distribution.
 
@@ -14,13 +14,13 @@ Easily install and manage Puppeteer browsers in your Electron app. This package 
 ## Installation
 
 ```bash
-npm install electron-puppeteer
+npm install electron-puppeteer-browsers
 ```
 
 ## Quick Start
 
 ```typescript
-import { installAndGetChromiumPath } from 'electron-puppeteer';
+import { installAndGetChromiumPath } from 'electron-puppeteer-browsers';
 import puppeteer from 'puppeteer-core';
 
 // One-liner to get a Chrome executable path
@@ -72,7 +72,7 @@ const firefoxPath = await installAndGetFirefoxPath();
 Install a browser with custom options.
 
 ```typescript
-import { installBrowser, Browser } from 'electron-puppeteer';
+import { installBrowser, Browser } from 'electron-puppeteer-browsers';
 
 const result = await installBrowser({
   browser: Browser.CHROME,
@@ -146,7 +146,7 @@ enum Browser {
 ### Basic Puppeteer Integration
 
 ```typescript
-import { installAndGetChromiumPath } from 'electron-puppeteer';
+import { installAndGetChromiumPath } from 'electron-puppeteer-browsers';
 import puppeteer from 'puppeteer-core';
 
 async function createBrowser() {
@@ -163,7 +163,7 @@ async function createBrowser() {
 ### Multiple Browser Support
 
 ```typescript
-import { installBrowser, Browser } from 'electron-puppeteer';
+import { installBrowser, Browser } from 'electron-puppeteer-browsers';
 
 async function setupBrowsers() {
   // Install multiple browsers
@@ -180,7 +180,7 @@ async function setupBrowsers() {
 ### Version-specific Installation
 
 ```typescript
-import { installAndGetChromiumPath } from 'electron-puppeteer';
+import { installAndGetChromiumPath } from 'electron-puppeteer-browsers';
 
 // Install specific Chrome version for consistent testing
 const chromePath = await installAndGetChromiumPath('119.0.6045.105');
@@ -189,7 +189,7 @@ const chromePath = await installAndGetChromiumPath('119.0.6045.105');
 ### Cache Management
 
 ```typescript
-import { getInstalledBrowserList, clearBrowserCache } from 'electron-puppeteer';
+import { getInstalledBrowserList, clearBrowserCache } from 'electron-puppeteer-browsers';
 
 // Check what's installed
 const installed = await getInstalledBrowserList();
@@ -220,7 +220,7 @@ Browsers are stored in:
 For convenience, you can use string aliases instead of the Browser enum:
 
 ```typescript
-import { BROWSER_ALIASES } from 'electron-puppeteer';
+import { BROWSER_ALIASES } from 'electron-puppeteer-browsers';
 
 // These are equivalent:
 await installBrowser({ browser: Browser.CHROME });
@@ -232,7 +232,7 @@ Available aliases: `'chrome'`, `'chromium'`, `'firefox'`, `'chromedriver'`, `'ch
 ## Error Handling
 
 ```typescript
-import { installAndGetChromiumPath } from 'electron-puppeteer';
+import { installAndGetChromiumPath } from 'electron-puppeteer-browsers';
 
 try {
   const chromePath = await installAndGetChromiumPath();
