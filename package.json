@@ -1,0 +1,52 @@
+{
+  "name": "electron-puppeteer",
+  "version": "1.0.0",
+  "description": "Easily install and manage Puppeteer browsers in your Electron app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "npm run build && electron example/index.js",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
+  },
+  "keywords": [
+    "electron",
+    "puppeteer",
+    "browsers",
+    "bundle",
+    "ship",
+    "browser",
+    "chromium",
+    "firefox",
+    "automation"
+  ],
+  "author": "Alec Armbruster <alectrocute@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@puppeteer/browsers": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "electron": "^31.0.1",
+    "eslint": "^8.0.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "electron": ">=31.0.1"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alectrocute/electron-puppeteer"
+  }
+}
