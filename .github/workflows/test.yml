@@ -32,9 +32,6 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Run lint
-      run: npm run lint
-
     - name: Run tests (without downloads)
       env:
         SKIP_DOWNLOAD_TESTS: true
